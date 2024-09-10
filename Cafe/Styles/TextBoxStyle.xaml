@@ -2,13 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Style TargetType="TextBox">
         <Setter Property="FontSize" Value="20" />
-        <Setter Property="FontSize" Value="Arial" />
+        <Setter Property="FontFamily" Value="Arial" />
         <Setter Property="Padding" Value="5 0" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
     <Style TargetType="PasswordBox">
         <Setter Property="FontSize" Value="20" />
-        <Setter Property="FontSize" Value="Arial" />
+        <Setter Property="FontFamily" Value="Arial" />
         <Setter Property="Padding" Value="20 10" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
