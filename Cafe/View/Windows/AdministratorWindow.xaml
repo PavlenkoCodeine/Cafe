@@ -1,0 +1,31 @@
+﻿<Window x:Class="Cafe.View.Windows.AdministratorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cafe.View.Windows"
+        mc:Ignorable="d"
+        Title="Окно администратора" MinHeight="720" MinWidth="1280"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="EmployeeListBtn" Content="Сотрудники"
+                    Click="EmployeeListBtn_Click"/>
+            <Separator Width="30" Height="0"/>
+
+            <Button x:Name="OrderListBtn" Content="Заказы"
+                    Click="OrderListBtn_Click"/>
+            <Separator Width="30" Height="0"/>
+
+            <Button x:Name="ShiftListBtn" Content="Смены"
+                    Click="ShiftListBtn_Click"/>
+            <Separator Width="30" Height="0"/>
+        </StackPanel>
+        <Frame Name="MainFrm" Grid.Row="2" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>

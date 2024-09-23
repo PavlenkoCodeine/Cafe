@@ -1,0 +1,41 @@
+﻿<Page x:Class="Cafe.View.Pages.EmployeesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cafe.View.Pages"
+      mc:Ignorable="d" 
+      Title="Окно администратора" MinHeight="782"
+      MinWidth="1560">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="500" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+            <TextBox Name="SearchTb" GotFocus="SearchTb_GotFocus"
+                     LostFocus="SearchTb_LostFocus" 
+                     TextChanged="SearchTb_TextChanged" />
+            <TextBlock Name="SearchTbl" Text="Поиск по имени" />
+            <ComboBox Name="FilterByRoleCmb" Grid.Column="2"
+                      SelectionChanged="FilterByRoleCmb_SelectionChanged"/>
+            <Button Name="AddNewEmployeeBtn" Grid.Column="5"
+                    Content="Добавить сотрудника"
+                    Click="AddNewEmployeeBtn_Click"/>
+        </Grid>
+    </Grid>
+</Page>
