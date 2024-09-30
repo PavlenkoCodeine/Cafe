@@ -23,6 +23,11 @@ namespace Cafe.View.Windows
         public AuthirizationWindow()
         {
             InitializeComponent();
+
+            // Заполняем поля для входа сохранёнными данными 
+            LoginTb.Text = Properties.Settings.Default.LoginValue;
+            PasswordPb.Password = Properties.Settings.Default.PasswordValue;
+            RememberMeCb.IsChecked = Properties.Settings.Default.CheckValue;
         }
 
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
@@ -42,6 +47,20 @@ namespace Cafe.View.Windows
                 == LoginTb.Text && employee.Password == PasswordPb.Password);
                 if (newEmployee != null)
                 {
+                    // Запоминаем данные пользователя
+                    if (RememberMeCb.IsChecked ==true)
+                    {
+                        Properties.Settings.Default.LoginValue = LoginTb.Text;
+                        Properties.Settings.Default.PasswordValue = PasswordPb.Password;
+                        Properties.Settings.Default.CheckValue = true;
+
+                        Properties.Settings.Default.Save();
+                    }
+                    else
+                    {
+                        // Присваем значение по умолчанию
+                        Properties.Settings.Default.Reset();
+                    }
                     switch (newEmployee.RoleId)
                     {
                         case 1:
